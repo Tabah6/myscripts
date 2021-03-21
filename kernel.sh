@@ -36,7 +36,7 @@ err() {
 KERNEL_DIR=$PWD
 
 # The name of the Kernel, to name the ZIP
-ZIPNAME="Tabah-TEST"
+ZIPNAME="clock-TEST"
 
 # The name of the device for which the kernel is built
 MODEL="Redmi Note 5 Pro"
@@ -60,7 +60,7 @@ PTTG=1
 	if [ $PTTG = 1 ]
 	then
 		# Set Telegram Chat ID
-		CHATID="-1001400514237"
+		CHATID="-1001420838318"
 	fi
 
 # Generate a full DEFCONFIG prior building. 1 is YES | 0 is NO(default)
@@ -138,7 +138,7 @@ COMMIT_HEAD=$(git log --oneline -1)
 ##------------------------------------------------------##
 
 exports() {
-	export KBUILD_BUILD_USER="reina"
+	export KBUILD_BUILD_USER="Tabah"
 	export ARCH=arm64
 	export SUBARCH=arm64
 
@@ -155,7 +155,7 @@ exports() {
 ##---------------------------------------------------------##
 
 tg_post_msg() {
-	curl -s -X POST "$BOT_MSG_URL" -d chat_id="-1001400514237" \
+	curl -s -X POST "$BOT_MSG_URL" -d chat_id="-1001420838318" \
 	-d "disable_web_page_preview=true" \
 	-d "parse_mode=html" \
 	-d text="$1"
