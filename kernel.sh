@@ -36,7 +36,7 @@ err() {
 KERNEL_DIR=$PWD
 
 # The name of the Kernel, to name the ZIP
-ZIPNAME="SiLonT-TEST"
+ZIPNAME="clock-TEST"
 
 # The name of the device for which the kernel is built
 MODEL="Redmi Note 6 Pro"
@@ -60,7 +60,7 @@ PTTG=1
 	if [ $PTTG = 1 ]
 	then
 		# Set Telegram Chat ID
-		CHATID="-1001403511595"
+		CHATID="-1001420838318"
 	fi
 
 # Generate a full DEFCONFIG prior building. 1 is YES | 0 is NO(default)
@@ -90,7 +90,7 @@ LOG_DEBUG=0
 
 ## Set defaults first
 DISTRO=$(cat /etc/issue)
-KBUILD_BUILD_HOST=Laptop-Sangar
+KBUILD_BUILD_HOST=Tabah6
 CI_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 token=$TELEGRAM_TOKEN
 export KBUILD_BUILD_HOST CI_BRANCH
@@ -107,7 +107,7 @@ then
 	if [ -n "$DRONE" ]
 	then
 		export KBUILD_BUILD_VERSION=$DRONE_BUILD_NUMBER
-		export KBUILD_BUILD_HOST=Laptop-Sangar
+		export KBUILD_BUILD_HOST=Tabah6
 		export CI_BRANCH=$DRONE_BRANCH
 	else
 		echo "Not presetting Build Version"
@@ -155,7 +155,7 @@ exports() {
 ##---------------------------------------------------------##
 
 tg_post_msg() {
-	curl -s -X POST "$BOT_MSG_URL" -d chat_id="-1001403511595" \
+	curl -s -X POST "$BOT_MSG_URL" -d chat_id="-1001420838318" \
 	-d "disable_web_page_preview=true" \
 	-d "parse_mode=html" \
 	-d text="$1"
