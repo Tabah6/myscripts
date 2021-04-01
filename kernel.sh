@@ -36,7 +36,7 @@ err() {
 KERNEL_DIR=$PWD
 
 # The name of the Kernel, to name the ZIP
-ZIPNAME="clock-TEST"
+ZIPNAME="Love"
 
 # The name of the device for which the kernel is built
 MODEL="Redmi Note 5 Pro"
@@ -90,7 +90,7 @@ LOG_DEBUG=0
 
 ## Set defaults first
 DISTRO=$(cat /etc/issue)
-KBUILD_BUILD_HOST=Rahmad Tabah S
+KBUILD_BUILD_HOST=Tabah彡HBT彡
 CI_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 token=$TELEGRAM_TOKEN
 export KBUILD_BUILD_HOST CI_BRANCH
@@ -101,13 +101,13 @@ then
 	if [ -n "$CIRCLECI" ]
 	then
 		export KBUILD_BUILD_VERSION=$CIRCLE_BUILD_NUM
-		export KBUILD_BUILD_HOST="Sdn2"
+		export KBUILD_BUILD_HOST=
 		export CI_BRANCH=$CIRCLE_BRANCH
 	fi
 	if [ -n "$DRONE" ]
 	then
 		export KBUILD_BUILD_VERSION=$DRONE_BUILD_NUMBER
-		export KBUILD_BUILD_HOST=Rahmad Tabah S
+		export KBUILD_BUILD_HOST=Tabah彡HBT彡
 		export CI_BRANCH=$DRONE_BRANCH
 	else
 		echo "Not presetting Build Version"
@@ -132,7 +132,7 @@ COMMIT_HEAD=$(git log --oneline -1)
 		GCC32_DIR=$KERNEL_DIR/gcc32
 
 	msg "|| Cloning Anykernel ||"
-	git clone --depth 1 --no-single-branch https://github.com/Reinazhard/AnyKernel3.git -b master
+	git clone --depth 1 --no-single-branch https://github.com/Tabah6/AnyKernel3.git -b master
 }
 
 ##------------------------------------------------------##
